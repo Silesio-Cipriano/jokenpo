@@ -1,0 +1,12 @@
+{
+  "name": "jokenpo",
+  "displayName": "jokenpo",
+  "expo": {
+    "name": "jokenpo",
+    "slug": "jokenpo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
