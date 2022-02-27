@@ -7,13 +7,23 @@ import { RFValue } from "react-native-responsive-fontsize";
 
 import {Container} from "./styles"
 
+type HandEnemy = {
+  handSelected: Number;
+  dimensions: number;
+}
 
-export default function Hand(){
+export default function Hand({handSelected,dimensions}:HandEnemy){
   return (
     <Container>
-        <Papel 
-          height={RFValue(63)}
-        />
+      { handSelected==1 && <Papel 
+          height={RFValue(dimensions)}
+        />}
+        { handSelected==2 && <Pedra 
+          height={RFValue(dimensions)}
+        />}
+        { handSelected==3 && <Tesoura 
+          height={RFValue(dimensions)}
+        />}
     </Container>
   )
 }

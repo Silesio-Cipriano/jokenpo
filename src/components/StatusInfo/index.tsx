@@ -2,14 +2,19 @@ import React from "react";
 
 import { Container, NumberText, ResultText } from "./styles"
 
-export default function () {
+type statusProps = {
+  name: String;
+  value:number
+}
+
+export default function ({value, name }: statusProps) {
   return (
     <Container>
       <NumberText>
-        2
+        {value}
       </NumberText>
       <ResultText>
-        Vitorias
+        {name}
       </ResultText>
     </Container>
   )

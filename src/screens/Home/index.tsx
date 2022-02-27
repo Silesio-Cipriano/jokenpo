@@ -20,8 +20,8 @@ export default function Home(){
     <Container>
       <Header>
         <LeftHeader>
-          <StatusInfo/>
-          <StatusInfo/>
+          <StatusInfo value={5} name={"Vitorias"} />
+          <StatusInfo value={2} name={"Derrotas"}/>
         </LeftHeader>
         <ButtonChangeTheme>
           <SpaceIcon>
@@ -32,11 +32,11 @@ export default function Home(){
           </SpaceIcon>
         </ButtonChangeTheme>
       </Header>
-      <PainelStatus HandSelected={3} dimensions={110}/>
+      <PainelStatus HandSelected={3} dimensions={120}/>
       <SelectHand>
-        <Hand/>
-        <Hand/>
-        <Hand/>
+        <Hand handSelected={1} dimensions={45}/>
+        <Hand  handSelected={2} dimensions={45}/>
+        <Hand  handSelected={3} dimensions={45}/>
       </SelectHand>
 
       <Button>

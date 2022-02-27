@@ -25,9 +25,9 @@ export default function PainelStatus({ HandSelected,dimensions }: HandEnemy) {
   return (
     <Container>
       <EnemyStatus>
-        { HandSelected==1 && <Pedra width={dimensions}/>}
-        { HandSelected==2 && <Tesoura width={dimensions}/>}
-        { HandSelected==3 && <Papel width={dimensions}/>}
+        { HandSelected==1 && <Papel width={RFValue(dimensions)}/>}
+        { HandSelected==2 && <Pedra width={RFValue(dimensions)}/>}
+        { HandSelected==3 && <Tesoura width={RFValue(dimensions)}/>}
       </EnemyStatus>
       <Status>
         Perdeu!
