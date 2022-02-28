@@ -34,9 +34,9 @@ export default function Home(){
       </Header>
       <PainelStatus HandSelected={3} dimensions={120}/>
       <SelectHand>
-        <Hand handSelected={1} dimensions={45}/>
-        <Hand  handSelected={2} dimensions={45}/>
-        <Hand  handSelected={3} dimensions={45}/>
+        <Hand handSelected={1} dimensions={45} selected={false}/>
+        <Hand  handSelected={2} dimensions={45} selected={false}/>
+        <Hand  handSelected={3} dimensions={45} selected={true}/>
       </SelectHand>
 
       <Button>

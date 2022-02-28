@@ -10,14 +10,15 @@ import {Container} from "./styles"
 type HandEnemy = {
   handSelected: Number;
   dimensions: number;
+  selected :boolean;
 }
 
-export default function Hand({handSelected,dimensions}:HandEnemy){
+export default function Hand({handSelected,dimensions, selected}:HandEnemy){
   return (
-    <Container>
+    <Container handSelected={handSelected} dimensions={dimensions} selected ={selected} >
       { handSelected==1 && <Papel 
-          height={RFValue(dimensions)}
-        />}
+          height={RFValue(dimensions) }
+        /> }
         { handSelected==2 && <Pedra 
           height={RFValue(dimensions)}
         />}
