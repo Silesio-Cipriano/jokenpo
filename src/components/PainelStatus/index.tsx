@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { RFValue } from 'react-native-responsive-fontsize';
 
 import Papel from "../../assets/images/Papel.svg";
@@ -10,27 +10,25 @@ import {
   Container,
   EnemyStatus,
   Status,
-  HandSelected
 } from './styles'
 
 type HandEnemy = {
-  HandSelected: Number;
+  enemyHandSelected: number;
   dimensions: number;
+  statusSelected:String;
 }
-export default function PainelStatus({ HandSelected,dimensions }: HandEnemy) {
-  const hands =[Pedra,Papel,Tesoura];
-
-
-
+export default function PainelStatus({ enemyHandSelected,dimensions, statusSelected}: HandEnemy) {
+  console.log("recebi isso: "+enemyHandSelected);
   return (
     <Container>
+      {enemyHandSelected!=-1 &&
       <EnemyStatus>
-        { HandSelected==1 && <Papel width={RFValue(dimensions)}/>}
-        { HandSelected==2 && <Pedra width={RFValue(dimensions)}/>}
-        { HandSelected==3 && <Tesoura width={RFValue(dimensions)}/>}
-      </EnemyStatus>
+        { enemyHandSelected==0 && <Papel width={RFValue(dimensions)}/> }
+        {enemyHandSelected==1 && <Pedra width={RFValue(dimensions)}/>}
+     {   enemyHandSelected==2 && <Tesoura width={RFValue(dimensions)}/>}
+      </EnemyStatus>}
       <Status>
-        Perdeu!
+        {statusSelected}
       </Status>
     </Container>
   )

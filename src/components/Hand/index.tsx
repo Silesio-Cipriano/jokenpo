@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Papel from "../../assets/images/Papel.svg";
 import Tesoura from "../../assets/images/Tesoura.svg";
 import Pedra from "../../assets/images/Pedra.svg";
@@ -11,18 +11,20 @@ type HandEnemy = {
   handSelected: Number;
   dimensions: number;
   selected :boolean;
+  onPress: ()=>void;
 }
 
-export default function Hand({handSelected,dimensions, selected}:HandEnemy){
+export default function Hand({handSelected,dimensions, selected,onPress}:HandEnemy){
+ 
   return (
-    <Container handSelected={handSelected} dimensions={dimensions} selected ={selected} >
-      { handSelected==1 && <Papel 
+    <Container handSelected={handSelected} dimensions={dimensions} selected ={selected} onPress={onPress} >
+      { handSelected==0 && <Papel 
           height={RFValue(dimensions) }
         /> }
-        { handSelected==2 && <Pedra 
+        { handSelected==1 && <Pedra 
           height={RFValue(dimensions)}
         />}
-        { handSelected==3 && <Tesoura 
+        { handSelected==2 && <Tesoura 
           height={RFValue(dimensions)}
         />}
     </Container>

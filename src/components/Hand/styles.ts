@@ -1,10 +1,12 @@
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 
+
 type HandEnemy = {
   handSelected: Number;
   dimensions: number;
   selected :boolean;
+  onPress: ()=>void;
 }
 
 export const Container = styled.TouchableOpacity<HandEnemy>` 

@@ -10,12 +10,17 @@ type statusProps = {
 export default function ({value, name }: statusProps) {
   return (
     <Container>
+     {value >0 &&
+     <>
       <NumberText>
         {value}
       </NumberText>
+
       <ResultText>
         {name}
       </ResultText>
+      </>
+    }
     </Container>
   )
 }

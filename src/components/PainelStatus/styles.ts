@@ -24,10 +24,10 @@ import styled from 'styled-components/native';
   margin-bottom:${RFPercentage(4)}px;
  `
 
-type HandEnemy = {
+type handEnemy = {
   HandSelected: React.ComponentType
 }
 
- export const HandSelected = styled.View<HandEnemy>`
+ export const HandSelected = styled.View<handEnemy>`
  
  `;
