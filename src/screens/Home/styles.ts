@@ -57,4 +57,9 @@ export const TextButton= styled.Text  `
   font-family:${({theme})=>theme.fonts.bold};
   font-size: ${RFValue(18)}px;
 `
- 
+export const TextStartGame=styled.Text`
+  color:${({theme})=>theme.colors.button};
+  font-family:${({theme})=>theme.fonts.regular};
+  font-size: ${RFValue(18)}px;
+  text-align: center;
+`;

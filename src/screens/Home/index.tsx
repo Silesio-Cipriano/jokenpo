@@ -3,6 +3,8 @@ import Hand from "../../components/Hand";
 import PainelStatus from "../../components/PainelStatus";
 import StatusInfo from "../../components/StatusInfo";
 
+import Logo from "../../assets/images/Logo.svg"
+
 import {
   Container, 
   Header, 
@@ -12,11 +14,13 @@ import {
   SpaceIcon,
   SelectHand,
   Button,
-  TextButton
+  TextButton,
+  TextStartGame
 } from "./styles";
+import { Text } from "react-native";
 
 export default function Home(){
-
+  const [start,setStart]=useState(true); 
   const [select0,setSelect0]=useState(false); 
   const [select1,setSelect1]=useState(false); 
   const [select2,setSelect2]=useState(false); 
@@ -26,7 +30,7 @@ export default function Home(){
   const [defeat,setDefeat]=useState(0);
 
   function clearStatus(){
-    
+    setStart(true);
   setSelect0(false); 
   setSelect1(false); 
   setSelect2(false); 
@@ -37,19 +41,27 @@ export default function Home(){
   }
   let random=Math.floor(Math.random() * 2);
 
+  function addVitory(){
+    setVictory(victory+1);
+  }
+  function addDefeat(){
+    setDefeat(defeat+1);
+  }
 
   function handleSelected (hand:number){
+    setStart(false);
 
   random=Math.floor(Math.random() * 2);
   setHandleResult(random);
    if(hand==0){
      if(random==1){
+      addVitory();
       setStatus("Venceu!");
-      setVictory(victory+1);
     }else if(hand==random){
       setStatus("Empate!");
     }else if(random==2){
-      setDefeat(defeat+1);
+      addDefeat();
+
 
       setStatus("Perdeu!");
     }
@@ -59,15 +71,14 @@ export default function Home(){
    
    }else if(hand==1){
     if(random==2){
-      setVictory(victory+1);
-      
+      addVitory();
+
       setStatus("Venceu!");
     }else if(hand==random){
      
       setStatus("Empate!");
     }else if(random==0){
-      setDefeat(defeat+1);
-
+      addDefeat();
       setStatus("Perdeu!");
     }
     setSelect0(false);
@@ -75,17 +86,14 @@ export default function Home(){
     setSelect2(false);
    
    }else if(hand==2){
-
     if(random==0){
-      setVictory(victory+1);
+      addVitory();
 
       setStatus("Venceu!");
     }else if(hand==random){
-     
       setStatus("Empate!");
     }else if(random==1){
-      setDefeat(defeat+1);
-      
+      addDefeat();
 
       setStatus("Perdeu!");
     }
@@ -114,18 +122,22 @@ export default function Home(){
           </SpaceIcon>
         </ButtonChangeTheme>
       </Header>
-      <PainelStatus enemyHandSelected={handleResult} dimensions={120} statusSelected={status}/>
+
+      {start==true&&   <Logo height={205} align-items="center" width={300}/>}          
+
+      {start==false&& <PainelStatus enemyHandSelected={handleResult} dimensions={120} statusSelected={status}/> }
       <SelectHand>
         <Hand handSelected={0} dimensions={45} selected={select0} onPress={()=>handleSelected(0)}/>
         <Hand  handSelected={1} dimensions={45} selected={select1} onPress={()=>{handleSelected(1)}}/>
         <Hand  handSelected={2} dimensions={45} selected={select2} onPress={()=>{handleSelected(2)}}/>
       </SelectHand>
 
-      <Button onPress={()=>clearStatus()}>
+      { start==true&& <TextStartGame >Selecione a mao para iniciar</TextStartGame>}
+     { start==false&& <Button onPress={()=>clearStatus()}>
         <TextButton>
         Reiniciar
         </TextButton>
-      </Button>
+      </Button>}
     </Container>
 
   )
