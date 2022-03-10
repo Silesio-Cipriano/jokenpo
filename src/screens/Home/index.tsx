@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import Hand from "../../components/Hand";
 import PainelStatus from "../../components/PainelStatus";
 import StatusInfo from "../../components/StatusInfo";
+import themeDark from '../../global/styles/themeDark';
 
 import Logo from "../../assets/images/Logo.svg"
+
+import{useTheme} from '../../hooks/theme';
+
 
 import {
   Container, 
@@ -17,9 +21,14 @@ import {
   TextButton,
   TextStartGame
 } from "./styles";
-import { Text } from "react-native";
 
 export default function Home(){
+
+  const {handleTheme} = useTheme();
+  
+  console.log(handleTheme);
+  
+
   const [start,setStart]=useState(true); 
   const [select0,setSelect0]=useState(false); 
   const [select1,setSelect1]=useState(false); 
@@ -113,7 +122,7 @@ export default function Home(){
           <StatusInfo value={victory} name={"Vitorias"} />
           <StatusInfo value={defeat} name={"Derrotas"}/>
         </LeftHeader>
-        <ButtonChangeTheme>
+        <ButtonChangeTheme onPress={handleTheme} >
           <SpaceIcon>
           <Icon name="sun"/>
           </SpaceIcon>

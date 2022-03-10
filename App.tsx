@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StatusBar } from 'react-native';
-import {ThemeProvider} from 'styled-components';
-import theme from './src/global/styles/theme';
+import lightTheme from './src/global/styles/themeLight';
 import Home from './src/screens/Home';
+
+import {MyThemeProvider} from './src/hooks/theme'
+
 
 import {
   useFonts,
@@ -13,22 +15,27 @@ import {
 import AppLoading from 'expo-app-loading';
 
 export default function App() {
+  const tema=useState(lightTheme);
+
+ 
   const [fontsLoaded]=useFonts({
     Poppins_400Regular,
     Poppins_500Medium,
     Poppins_700Bold,
-  })
+  });
 
   if(!fontsLoaded){
      return <AppLoading/> 
   }
 
+
   return (
   <>
   <StatusBar hidden/>
-  <ThemeProvider theme={theme}>
-   <Home/>
-  </ThemeProvider>
+   <MyThemeProvider>
+         <Home/>
+   </MyThemeProvider>
+   
   </>
   );
 }
