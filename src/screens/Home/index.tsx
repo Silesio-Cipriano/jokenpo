@@ -15,10 +15,12 @@ import {
   Header, 
   LeftHeader,
   ButtonChangeTheme,
-  Icon,
   SelectHand,
   Button,
+  LogoTitle,
+  LogoSlogan,
   TextButton,
+  AppSignature,
   TextStartGame
 } from "./styles";
 
@@ -126,16 +128,23 @@ export default function Home(){
         </ButtonChangeTheme>
       </Header>
 
-      {start==true&&   <Logo height={205} align-items="center" width={300}/>}          
+      {start==true&&  
+      <>
+      <LogoTitle>JOKENPÔ</LogoTitle>
+      <LogoSlogan>Pedra ↩ Tesoura ↪ Papel</LogoSlogan>
+      </>
+      //  <Logo height={205} align-items="center" width={300}/>
+       }          
 
       {start==false&& <PainelStatus enemyHandSelected={handleResult} dimensions={120} statusSelected={status}/> }
       <SelectHand>
-        <Hand handSelected={0} dimensions={45} selected={select0} onPress={()=>handleSelected(0)}/>
         <Hand  handSelected={1} dimensions={45} selected={select1} onPress={()=>{handleSelected(1)}}/>
         <Hand  handSelected={2} dimensions={45} selected={select2} onPress={()=>{handleSelected(2)}}/>
+        <Hand handSelected={0} dimensions={45} selected={select0} onPress={()=>handleSelected(0)}/>
       </SelectHand>
 
-      { start==true&& <TextStartGame >Selecione a mao para iniciar</TextStartGame>}
+      { start==true&& <TextStartGame >Selecione uma mão para iniciar</TextStartGame>}
+      { start==true&& <AppSignature >Criado por Silésio Cipriano</AppSignature>}
      { start==false&& <Button onPress={()=>clearStatus()}>
         <TextButton>
         Reiniciar
