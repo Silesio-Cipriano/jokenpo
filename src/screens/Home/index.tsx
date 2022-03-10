@@ -2,6 +2,7 @@ import React, { useEffect, useState,useContext } from "react";
 import Hand from "../../components/Hand";
 import PainelStatus from "../../components/PainelStatus";
 import StatusInfo from "../../components/StatusInfo";
+import SpaceIcon from "../../components/SpaceIcon";
 import themeDark from '../../global/styles/themeDark';
 
 import Logo from "../../assets/images/Logo.svg"
@@ -15,7 +16,6 @@ import {
   LeftHeader,
   ButtonChangeTheme,
   Icon,
-  SpaceIcon,
   SelectHand,
   Button,
   TextButton,
@@ -25,8 +25,6 @@ import {
 export default function Home(){
 
   const {handleTheme} = useTheme();
-  
-  console.log(handleTheme);
   
 
   const [start,setStart]=useState(true); 
@@ -123,12 +121,8 @@ export default function Home(){
           <StatusInfo value={defeat} name={"Derrotas"}/>
         </LeftHeader>
         <ButtonChangeTheme onPress={handleTheme} >
-          <SpaceIcon>
-          <Icon name="sun"/>
-          </SpaceIcon>
-          <SpaceIcon>
-          <Icon name="moon"/>
-          </SpaceIcon>
+          <SpaceIcon icon="sun" type="day"/>
+          <SpaceIcon icon="moon" type="night"/>
         </ButtonChangeTheme>
       </Header>
 

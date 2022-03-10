@@ -37,7 +37,7 @@ function MyThemeProvider({children}:themeProviderProps){
   const [themeMode,setThemeMode]=useState(themeLight);
  
   function handleTheme(){
-    console.log("ola");
+  
     setThemeMode(themeMode===themeLight? themeDark:themeLight);
   }
 

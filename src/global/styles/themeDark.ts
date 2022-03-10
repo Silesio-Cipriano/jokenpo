@@ -1,12 +1,12 @@
 export default {
   colors:{
-    background:"#FF0",
-    primary:"#72FF",
-    secondary:"#F72890",
-    button:"#22252D",
-    text_color:"#22252D",
-    text_win:"#72CCFF",
-    buttonTheme:"#F5F5F5",
+    background:"#171B25",
+    primary:"#FFB890",
+    secondary:"#72CCFF",
+    button:"#000000",
+    text_color:"#FFFFFF",
+    text_win:"#FFFFFF",
+    buttonTheme:"#262931",
   },
   fonts:{
     regular:"Poppins_400Regular",
