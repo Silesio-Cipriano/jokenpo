@@ -8,10 +8,9 @@ O famoso joguinho pedra, papel e tesoura ... um classico, é um jogo de mãos re
 
 <p align="center">
 
-<img align="center" src="https://user-images.githubusercontent.com/68440141/160178741-6137e3f0-1d2c-4a73-942b-17c4bdd8e560.gif" width="450" height="880"/>
+<img align="center" src="https://user-images.githubusercontent.com/68440141/160184962-be6b02fe-e319-4859-8acb-3eaa60cf9d72.gif" width="450" height="880"/>
 
 <p/>
-
 
 
 ## Funcionalidade
@@ -22,6 +21,6 @@ O famoso joguinho pedra, papel e tesoura ... um classico, é um jogo de mãos re
 - [X] Criar contextos;
 - [X] Criar Hooks;
 
-<p align="center" fontSize="42"> 
-	Projeto concluido 🚀🚀
-</p>
+# Fase do projeto
+
+ concluido 🚀🚀
