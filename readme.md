@@ -1,4 +1,4 @@
-# jokenpô - com react native
+# Jokenpô - com react native
 O famoso joguinho pedra, papel e tesoura ... um classico, é um jogo de mãos recreativo e simples para duas ou mais pessoas, que não requer equipamentos nem habilidade.
 
 ## Ideia
